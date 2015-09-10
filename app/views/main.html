@@ -1,0 +1,7 @@
+<div id="main">
+    <div class="row">
+        <div class="col-md-2" ng-repeat="photo in main.photos | orderBy:'likes.count':true | limitTo:24">
+            <img class="img-responsive" ng-src="{{photo.images.standard_resolution.url}}" alt="">
+        </div>
+    </div>
+</div>
