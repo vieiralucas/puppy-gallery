@@ -8,11 +8,10 @@
  * Controller of the photoGalleryApp
  */
 angular.module('photoGalleryApp')
-    .controller('MainCtrl', mainCtrl);
+    .controller('MainCtrl', MainCtrl);
 
-mainCtrl.$inject = ['instagram'];
-
-function mainCtrl(instagram) {
+MainCtrl.$inject = ['instagram'];
+function MainCtrl(instagram) {
     var that = this;
 
     that.init = init;
