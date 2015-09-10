@@ -13,17 +13,16 @@ angular.module('photoGalleryApp')
 mainCtrl.$inject = ['instagram'];
 
 function mainCtrl(instagram) {
-    var self = this;
+    var that = this;
 
-    init();
+    that.init = init;
+
+    that.init();
 
     function init() {
         instagram.fetchPuppies()
             .then(function(photos) {
-                self.photos = photos;
-            })
-            .catch(function(err) {
-                console.log(err);
+                that.photos = photos;
             });
     }
 }
