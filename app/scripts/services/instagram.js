@@ -28,8 +28,8 @@ function instagram($http, $q) {
                 resp = resp.data;
 
                 var filteredData = resp.data.filter(function(data) {
-                  return data.likes.count > 500
-                    && data.images.standard_resolution.width > 480
+                  return data.likes.count >= 500
+                    && data.images.standard_resolution.width >= 480
                     && data.images.standard_resolution.width === data.images.standard_resolution.height;
                 });
 
