@@ -8,23 +8,22 @@
  * Controller of the photoGalleryApp
  */
 angular.module('photoGalleryApp')
-  .controller('MainCtrl', mainCtrl);
+    .controller('MainCtrl', mainCtrl);
 
-    mainCtrl.$inject = ['instagram'];
+mainCtrl.$inject = ['instagram'];
 
 function mainCtrl(instagram) {
-  var self = this;
+    var self = this;
 
-  init();
+    init();
 
-  function init() {
-    instagram.fetchPopular()
-      .then(function(photos) {
-        self.photos = photos;
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
-  }
-
+    function init() {
+        instagram.fetchPuppies()
+            .then(function(photos) {
+                self.photos = photos;
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
+    }
 }

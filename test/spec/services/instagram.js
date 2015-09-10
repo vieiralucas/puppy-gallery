@@ -1,20 +1,18 @@
 'use strict';
 
 describe('Service: instagram', function () {
+    beforeEach(module('photoGalleryApp'));
 
-  // load the service's module
-  beforeEach(module('photoGalleryApp'));
+    var instagram,
+        httpBackend;
 
-  // instantiate service
-  var instagram;
-  beforeEach(inject(function (_instagram_) {
-    instagram = _instagram_;
-  }));
+    beforeEach(inject(function (_instagram_, $httpBackend) {
+        instagram = _instagram_;
+    }));
 
-  describe('fetch', function() {
-    it('should lala', function() {
-        expect(true).toBe(!true);
+    describe('fetch', function() {
+        it('should lala', function() {
+            expect(true).toBe(!true);
+        });
     });
-
-  });
 });
