@@ -29,8 +29,8 @@ body {
 
 }
 .modal-content {
-    width: 480px;
     margin: auto;
+    width: 480px;
     border-radius: 100%;
 
     .modal-body {
@@ -48,6 +48,15 @@ body {
             position: absolute;
             width: 480px;
             top: 240px;
+            color: #DDD;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .author {
+            position: absolute;
+            width: 480px;
+            top: 400px;
             color: #DDD;
             font-size: 20px;
             text-align: center;
