@@ -438,6 +438,22 @@ module.exports = function (grunt) {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
             }
+        },
+
+        shell: {
+            deploy: {
+                command: function() {
+                    return [
+                        'cd dist',
+                        'git init',
+                        'git remote add origin https://github.com/vieiralucas/puppy-gallery.git',
+                        'git checkout -b gh-pages',
+                        'git add . -A',
+                        'git commit -m "Release"',
+                        'git push origin gh-pages -f'
+                    ].join(' && ');
+                }
+            }
         }
     });
 
@@ -493,5 +509,12 @@ module.exports = function (grunt) {
         'newer:jshint',
         'test',
         'build'
+    ]);
+
+    grunt.registerTask('deploy', [
+        'jshint',
+        'test',
+        'build',
+        'shell:deploy'
     ]);
 };
