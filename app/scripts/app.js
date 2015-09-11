@@ -10,7 +10,8 @@
  */
 angular
     .module('photoGalleryApp', [
-        'ngRoute'
+        'ngRoute',
+        'ui.bootstrap'
     ])
     .config(config);
 
